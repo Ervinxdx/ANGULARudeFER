@@ -1,0 +1,19 @@
+<h4>Listado de Personajes</h4>
+<ul class="list-group">
+
+    @for (item of characterList; track $index) {
+        <li class="list-group-item d-flex justify-content-between" [ngClass]="{'list-group-item-success align-items-center': $even, 'list-group-item-danger': !$even}">
+            <div class="text-primary">
+                <span class="text-primary">{{$index+1}}</span>
+                {{ item.name }}
+                 <span style="font-weight: bold;color: blueviolet;">Power:</span>
+                {{item.power}}
+
+            </div>
+            <button class="btn btn-close" (click)="onDeleteCharacter(item.id)"></button>
+
+
+        </li>
+    }
+      
+</ul>
